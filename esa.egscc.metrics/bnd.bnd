@@ -6,3 +6,8 @@ Bundle-Version: 1.0.0.${tstamp}
 
 javac.source: 1.8
 javac.target: 1.8
+
+-dependson: *
+
+-export: \
+  esa.egscc.metrics.bndrun
