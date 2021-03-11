@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.osgi.org/xmlns/metatype/v1.1.0 http://www.osgi.org/xmlns/metatype/v1.1.0">
+
+	<OCD id="esa.egscc.metrics.config"
+		 name="Metrics configuration"
+		 description="Configuration for EGSCC Metric Services">
+		<AD type="String" name="PUSH_URL" id="PUSH_URL"
+			default="http://localhost:9091/metrics" required="true"
+			description="metrics cloud push url" />
+		<AD type="boolean" id="ENABLED" name="ENABLED"
+			description="enable metrics" default="true" />
+		<AD type="boolean" id="LOCAL_ENDPOINT_ENABLED"
+			name="LOCAL_ENDPOINT_ENABLED" description="enable local endpoint"
+			default="true" />
+		<AD type="boolean" id="SKIP_CERTIFICATE_CHECK"
+			name="SKIP_CERTIFICATE_CHECK"
+			description="skip certificate check for development environments"
+			default="true" />
+		<AD type="Integer" id="PUSH_TO_CLOUD_INTERVAL"
+			name="PUSH_TO_CLOUD_INTERVAL"
+			description="push to cloud interval in seconds" default="60" />
+		<AD type="String" name="ENABLED_METRICS" id="ENABLED_METRICS"
+			required="false" default="" description="white list filter for metrics as comma separated list. Wildcard (*) supported" />
+		<AD type="String" name="DISABLED_METRICS" id="DISABLED_METRICS"
+			required="false" default=""  description="black list filter for metrics as comma separated list. Wildcard (*) supported" />
+		<AD id="METRICS_METADATA" name="METRICS_METADATA" type="String" cardinality="0" required="true"
+            default="java_version" description="The tags to log to each metric" >
+        </AD>
+	</OCD>
+
+	<Designate pid="esa.egscc.metrics.config">
+		<Object ocdref="esa.egscc.metrics.config" />
+	</Designate>
+
+</MetaData>

@@ -1,0 +1,22 @@
+-buildpath: \
+	osgi.annotation;version='7.0.0',\
+	osgi.core;version='7.0.0',\
+	osgi.cmpn;version='7.0.0',\
+	org.eclipse.microprofile.metrics
+
+-testpath: \
+	${junit},\
+	${mockito},\
+	${mockito-deps}
+
+javac.source: 1.8
+javac.target: 1.8
+
+Bundle-Version: 0.0.0.${tstamp}
+-runfw: org.eclipse.osgi;version='[3.13.100.v20180827-1536,3.13.100.v20180827-1536]'
+-runee: JavaSE-1.8
+-runrequires: bnd.identity;id='esa.egscc.metrics.impl'
+-runbundles: \
+	esa.egscc.metrics.impl;version=snapshot,\
+	org.apache.felix.scr;version='[2.1.10,2.1.11)',\
+	org.eclipse.microprofile.metrics;version=snapshot

@@ -1,0 +1,35 @@
+-buildpath: \
+	osgi.annotation;version='7.0.0',\
+	osgi.core;version='7.0.0',\
+	osgi.cmpn;version='7.0.0',\
+	org.apache.felix.http.servlet-api;version='1.1.2',\
+	org.eclipse.microprofile.metrics,\
+	org.apache.felix.http.jetty
+
+-testpath: \
+	${junit},\
+	${mockito},\
+	${mockito-deps}
+
+javac.source: 1.8
+javac.target: 1.8
+
+Bundle-Version: 0.0.0.${tstamp}
+-runfw: org.eclipse.osgi;version='[3.13.100.v20180827-1536,3.13.100.v20180827-1536]'
+-runee: JavaSE-1.8
+-runrequires: \
+	bnd.identity;id='esa.egscc.metrics.adapter',\
+	bnd.identity;id='esa.egscc.metrics.impl'
+-runbundles: \
+	esa.egscc.metrics.adapter;version=snapshot,\
+	org.apache.felix.gogo.command;version='[1.0.2,1.0.3)',\
+	org.apache.felix.gogo.runtime;version='[1.0.10,1.0.11)',\
+	org.apache.felix.gogo.shell;version='[1.0.0,1.0.1)',\
+	org.apache.felix.http.jetty;version='[4.0.6,4.0.7)',\
+	org.apache.felix.http.servlet-api;version='[1.1.2,1.1.3)',\
+	org.apache.felix.scr;version='[2.1.10,2.1.11)',\
+	org.eclipse.microprofile.metrics;version=snapshot,\
+	org.eclipse.jetty.http;version='[9.4.12,9.4.13)',\
+	org.eclipse.jetty.util;version='[9.4.12,9.4.13)',\
+	org.osgi.compendium;version='[4.1.0,4.1.1)',\
+	esa.egscc.metrics.impl;version=snapshot
