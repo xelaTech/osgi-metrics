@@ -1,4 +1,8 @@
 .DS_Store
 .gradle/
-/generated/
+**/generated/
+**/bin/
 .metadata
+
+**/*.jar
+**/*.class
