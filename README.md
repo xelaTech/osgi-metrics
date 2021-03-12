@@ -1,7 +1,6 @@
 # osgi-metrics
 
-![Java CI](https://github.com/xelaTech/osgi-metrics/workflows/Java%20CI/badge.svg)
-
+![CI Build](https://github.com/xelaTech/osgi-metrics/workflows/CI%20Build/badge.svg)
 OSGi application providing OS, JVM and application level metrics.
 
 # Modules
