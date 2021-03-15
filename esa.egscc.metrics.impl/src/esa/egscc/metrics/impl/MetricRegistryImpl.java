@@ -23,17 +23,22 @@ import org.eclipse.microprofile.metrics.MetricType;
 import org.eclipse.microprofile.metrics.Timer;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+//import com.google.common.collect.ImmutableSortedSet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Component(name = "MetricRegistry", immediate = true, service = MetricRegistry.class)
 public final class MetricRegistryImpl extends MetricRegistry {
 	private static final String FILTER_NON_NULL = "Filter cannot be null";
+
+	private final Logger logger = LoggerFactory.getLogger(MetricRegistryImpl.class);
 
 	private ConcurrentMap<String, Metric> metrics;
 	private ConcurrentMap<String, Metadata> metadata;
 
 	@Activate
 	protected void activate() {
-		System.out.println("Activating MetricRegistry.");
+		logger.debug("Activating MetricRegistry.");
 
 		metrics = new ConcurrentHashMap<>();
 		metadata = new ConcurrentHashMap<>();
@@ -55,7 +60,7 @@ public final class MetricRegistryImpl extends MetricRegistry {
 		requireNonNull(metric, "Metric instance cannot be null");
 		requireNonNull(metadata, "Metric metadata cannot be null");
 
-		System.out.println("Registering metric " + name);
+		logger.debug("Registering metric {} with type {}", name, metric.getClass().getName());
 
 		final Metric existing = metrics.putIfAbsent(name, metric);
 		// Create copy of the metadata object so it can't be changed after its
@@ -69,7 +74,7 @@ public final class MetricRegistryImpl extends MetricRegistry {
 		this.metadata.putIfAbsent(name, metadataCopy);
 
 		if (existing != null) {
-			System.out.println("Metric " + name + " exists already.");
+			logger.debug("Metric {} exists already.", name);
 		}
 
 		return metric;
@@ -147,6 +152,7 @@ public final class MetricRegistryImpl extends MetricRegistry {
 	@Override
 	public SortedSet<String> getNames() {
 		return (SortedSet<String>) Collections.unmodifiableSortedSet((SortedSet<?>) metrics.keySet());
+//		return ImmutableSortedSet.copyOf(metrics.keySet());
 	}
 
 	@Override

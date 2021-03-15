@@ -19,6 +19,8 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import esa.egscc.metrics.adapter.config.MetadataLabelProvider;
 import esa.egscc.metrics.adapter.config.MetricConfiguration;
@@ -42,29 +44,35 @@ public class MetadataLabelProviderImpl implements MetadataLabelProvider {
 
 	private Map<String, String> metadataKeyValuePairs;
 
+	private final Logger logger = LoggerFactory.getLogger(MetadataLabelProviderImpl.class);
+
 	@Activate
 	protected void activate() {
+		logger.debug("Activating MetadataLabelProviderImpl.");
+
 		final Set<String> configuredMetadataKeys = metricConfiguration.getMetadata();
 		fillMetadataMap(configuredMetadataKeys);
 	}
 
 	@Deactivate
 	protected void deactivate() {
+		logger.debug("Deactivating MetadataLabelProviderImpl.");
+		
 		metadataKeyValuePairs = null;
 	}
 
 	private void fillMetadataMap(final Set<String> metadataKeys) {
 		// Order seems important for the push gateway URL
 		final Map<String, String> metadataKeyValueMap = new LinkedHashMap<>();
-		
+
 		// Prometheus job is always present and cannot be configured away.
 		metadataKeyValueMap.put(JOB_KEY, Constants.JOB_NAME);
-		
+
 		// java version - Note that since Java9, it returns e.g. "9" instead of "1.9"
 		if (metadataKeys.contains(JAVA_VERSION_KEY)) {
 			metadataKeyValueMap.put(JAVA_VERSION_KEY, System.getProperty("java.version"));
 		}
-		
+
 		this.metadataKeyValuePairs = Collections.unmodifiableMap(metadataKeyValueMap);
 	}
 

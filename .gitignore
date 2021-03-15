@@ -2,6 +2,7 @@
 .gradle/
 **/generated/
 **/bin/
+**/bin_test/
 .metadata
 
 **/*.jar
