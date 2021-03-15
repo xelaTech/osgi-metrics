@@ -19,5 +19,4 @@ public interface MetadataLabelProvider extends Supplier<Map<String, String>> {
 	 * Update all registered metadata and attach the configured label tags.
 	 */
 	void updateMetadataTags();
-
 }

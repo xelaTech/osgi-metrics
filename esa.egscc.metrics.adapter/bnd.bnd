@@ -4,7 +4,8 @@
 	osgi.cmpn;version='7.0.0',\
 	org.apache.felix.http.servlet-api;version='1.1.2',\
 	org.eclipse.microprofile.metrics,\
-	org.apache.felix.http.jetty
+	org.apache.felix.http.jetty,\
+	slf4j.api
 
 -testpath: \
 	${junit},\

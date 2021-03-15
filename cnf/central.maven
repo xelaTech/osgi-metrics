@@ -1,2 +1,3 @@
 # List repository contents using GAV coordinates
 
+com.google.guava:guava:30.1-jre

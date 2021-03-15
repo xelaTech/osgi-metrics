@@ -44,6 +44,8 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import esa.egscc.metrics.adapter.provider.helper.JmxHelper;
 
@@ -60,7 +62,7 @@ public final class SystemMetrics {
 
 	@Reference
 	private MetricRegistry metricRegistry;
-	
+
 //	@Reference
 //	private MetadataLabelProvider metadataLabelProvider;
 
@@ -74,9 +76,11 @@ public final class SystemMetrics {
 	private ServiceRegistration<?> sentAndReceivedBytesRetrieverReg;
 	private ServiceRegistration<?> jvmProcessStatusRetrieverReg;
 
+	private final Logger logger = LoggerFactory.getLogger(SystemMetrics.class);
+
 	@Activate
 	protected void activate(final BundleContext context) {
-		System.out.println("Activating SystemMetrics.");
+		logger.debug("Activating SystemMetrics.");
 
 		try {
 			jmxAvailable = Class.forName("java.lang.management.ManagementFactory") != null;
@@ -154,6 +158,8 @@ public final class SystemMetrics {
 
 	@Deactivate
 	protected void deactivate() {
+		logger.debug("Deactivating SystemMetrics.");
+
 		metricRegistry.remove(JVM_THREAD_COUNT_METRIC);
 		metricRegistry.remove(JVM_HEAP_USED_METRIC);
 		metricRegistry.remove(JVM_HEAP_FREE_METRIC);
