@@ -11,21 +11,22 @@ import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import org.eclipse.microprofile.metrics.Counter;
-import org.eclipse.microprofile.metrics.Gauge;
-import org.eclipse.microprofile.metrics.Histogram;
-import org.eclipse.microprofile.metrics.Metadata;
-import org.eclipse.microprofile.metrics.Meter;
-import org.eclipse.microprofile.metrics.Metric;
-import org.eclipse.microprofile.metrics.MetricFilter;
-import org.eclipse.microprofile.metrics.MetricRegistry;
-import org.eclipse.microprofile.metrics.MetricType;
-import org.eclipse.microprofile.metrics.Timer;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 //import com.google.common.collect.ImmutableSortedSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import esa.egscc.metrics.api.Counter;
+import esa.egscc.metrics.api.Gauge;
+import esa.egscc.metrics.api.Histogram;
+import esa.egscc.metrics.api.Metadata;
+import esa.egscc.metrics.api.Meter;
+import esa.egscc.metrics.api.Metric;
+import esa.egscc.metrics.api.MetricFilter;
+import esa.egscc.metrics.api.MetricRegistry;
+import esa.egscc.metrics.api.MetricType;
+import esa.egscc.metrics.api.Timer;
 
 @Component(name = "MetricRegistry", immediate = true, service = MetricRegistry.class)
 public final class MetricRegistryImpl extends MetricRegistry {

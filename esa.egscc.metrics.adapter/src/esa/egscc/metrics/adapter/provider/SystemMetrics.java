@@ -33,11 +33,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.eclipse.microprofile.metrics.Gauge;
-import org.eclipse.microprofile.metrics.Metadata;
-import org.eclipse.microprofile.metrics.MetricRegistry;
-import org.eclipse.microprofile.metrics.MetricType;
-import org.eclipse.microprofile.metrics.MetricUnits;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 import org.osgi.service.component.annotations.Activate;
@@ -48,6 +43,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import esa.egscc.metrics.adapter.provider.helper.JmxHelper;
+import esa.egscc.metrics.api.Gauge;
+import esa.egscc.metrics.api.Metadata;
+import esa.egscc.metrics.api.MetricRegistry;
+import esa.egscc.metrics.api.MetricType;
+import esa.egscc.metrics.api.MetricUnits;
 
 /**
  * OS and JVM metrics.

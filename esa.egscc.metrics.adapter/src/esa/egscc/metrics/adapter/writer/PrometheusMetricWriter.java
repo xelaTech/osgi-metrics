@@ -7,21 +7,20 @@ import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.function.BiPredicate;
 
-import org.eclipse.microprofile.metrics.Counter;
-import org.eclipse.microprofile.metrics.Gauge;
-import org.eclipse.microprofile.metrics.Histogram;
-import org.eclipse.microprofile.metrics.Metadata;
-import org.eclipse.microprofile.metrics.Meter;
-import org.eclipse.microprofile.metrics.Metric;
-import org.eclipse.microprofile.metrics.MetricRegistry;
-import org.eclipse.microprofile.metrics.MetricUnits;
-import org.eclipse.microprofile.metrics.Timer;
-
 import esa.egscc.metrics.adapter.exception.EmptyRegistryException;
 import esa.egscc.metrics.adapter.exception.NoSuchRegistryException;
 import esa.egscc.metrics.adapter.util.Constants;
 import esa.egscc.metrics.adapter.util.Helper;
 import esa.egscc.metrics.adapter.util.PrometheusBuilder;
+import esa.egscc.metrics.api.Counter;
+import esa.egscc.metrics.api.Gauge;
+import esa.egscc.metrics.api.Histogram;
+import esa.egscc.metrics.api.Metadata;
+import esa.egscc.metrics.api.Meter;
+import esa.egscc.metrics.api.Metric;
+import esa.egscc.metrics.api.MetricRegistry;
+import esa.egscc.metrics.api.MetricUnits;
+import esa.egscc.metrics.api.Timer;
 
 public class PrometheusMetricWriter {
 

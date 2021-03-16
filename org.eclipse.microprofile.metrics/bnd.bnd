@@ -1,3 +1,0 @@
-Export-Package: org.eclipse.microprofile.metrics
--runfw: org.eclipse.osgi;version='[3.13.100.v20180827-1536,3.13.100.v20180827-1536]'
--runee: JavaSE-1.8

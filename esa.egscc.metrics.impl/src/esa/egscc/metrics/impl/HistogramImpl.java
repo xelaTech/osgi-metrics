@@ -2,8 +2,8 @@ package esa.egscc.metrics.impl;
 
 import java.util.concurrent.atomic.LongAdder;
 
-import org.eclipse.microprofile.metrics.Histogram;
-import org.eclipse.microprofile.metrics.Snapshot;
+import esa.egscc.metrics.api.Histogram;
+import esa.egscc.metrics.api.Snapshot;
 
 /**
  * A metric which calculates the distribution of a value.
