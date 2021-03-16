@@ -3,10 +3,10 @@ package esa.egscc.metrics.impl;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-import org.eclipse.microprofile.metrics.Histogram;
-import org.eclipse.microprofile.metrics.Meter;
-import org.eclipse.microprofile.metrics.Snapshot;
-import org.eclipse.microprofile.metrics.Timer;
+import esa.egscc.metrics.api.Histogram;
+import esa.egscc.metrics.api.Meter;
+import esa.egscc.metrics.api.Snapshot;
+import esa.egscc.metrics.api.Timer;
 
 /**
  * A timer metric which aggregates timing durations and provides duration

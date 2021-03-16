@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.eclipse.jetty.http.HttpHeader;
-import org.eclipse.microprofile.metrics.MetricRegistry;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
@@ -27,6 +26,7 @@ import esa.egscc.metrics.adapter.exception.NoSuchRegistryException;
 import esa.egscc.metrics.adapter.provider.MetricTriggerListener;
 import esa.egscc.metrics.adapter.util.Constants;
 import esa.egscc.metrics.adapter.writer.PrometheusMetricWriter;
+import esa.egscc.metrics.api.MetricRegistry;
 
 @Component
 @HttpWhiteboardServletPattern("/metrics/*")

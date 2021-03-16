@@ -3,15 +3,14 @@ package esa.egscc.metrics.adapter.util;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.microprofile.metrics.Histogram;
-import org.eclipse.microprofile.metrics.Metadata;
-import org.eclipse.microprofile.metrics.Meter;
-import org.eclipse.microprofile.metrics.Metric;
-import org.eclipse.microprofile.metrics.MetricRegistry;
-import org.eclipse.microprofile.metrics.Timer;
-
 import esa.egscc.metrics.adapter.exception.EmptyRegistryException;
 import esa.egscc.metrics.adapter.exception.NoSuchMetricException;
+import esa.egscc.metrics.api.Histogram;
+import esa.egscc.metrics.api.Metadata;
+import esa.egscc.metrics.api.Meter;
+import esa.egscc.metrics.api.Metric;
+import esa.egscc.metrics.api.MetricRegistry;
+import esa.egscc.metrics.api.Timer;
 
 public class Helper {
 

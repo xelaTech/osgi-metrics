@@ -1,6 +1,6 @@
 package esa.egscc.metrics.impl;
 
-import org.eclipse.microprofile.metrics.Sampling;
+import esa.egscc.metrics.api.Sampling;
 
 /**
  * A statistically representative reservoir of a data stream.

@@ -13,7 +13,6 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 import org.eclipse.jetty.util.URIUtil;
-import org.eclipse.microprofile.metrics.MetricRegistry;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
@@ -25,6 +24,7 @@ import org.slf4j.LoggerFactory;
 import esa.egscc.metrics.adapter.config.MetadataLabelProvider;
 import esa.egscc.metrics.adapter.config.MetricConfiguration;
 import esa.egscc.metrics.adapter.util.Constants;
+import esa.egscc.metrics.api.MetricRegistry;
 
 /**
  * Lazily provides read-only label metadata (key-value pairs) for gateway

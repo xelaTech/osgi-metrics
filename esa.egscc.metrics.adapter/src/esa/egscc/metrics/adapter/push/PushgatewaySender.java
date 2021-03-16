@@ -19,7 +19,6 @@ import org.eclipse.jetty.client.api.Request;
 import org.eclipse.jetty.client.util.BasicAuthentication;
 import org.eclipse.jetty.client.util.OutputStreamContentProvider;
 import org.eclipse.jetty.http.HttpMethod;
-import org.eclipse.microprofile.metrics.MetricRegistry;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
@@ -35,6 +34,7 @@ import esa.egscc.metrics.adapter.provider.MetricTriggerListener;
 import esa.egscc.metrics.adapter.util.Constants;
 import esa.egscc.metrics.adapter.writer.PrometheusMetricWriter;
 import esa.egscc.metrics.adapter.writer.RegexMetricFilter;
+import esa.egscc.metrics.api.MetricRegistry;
 
 @Component(name = "PushgatewaySender", immediate = true)
 public class PushgatewaySender {

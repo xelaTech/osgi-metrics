@@ -2,7 +2,7 @@ package esa.egscc.metrics.impl;
 
 import java.util.concurrent.atomic.LongAdder;
 
-import org.eclipse.microprofile.metrics.Counter;
+import esa.egscc.metrics.api.Counter;
 
 /**
  * An incrementing and decrementing counter metric.

@@ -2,15 +2,15 @@ package esa.egscc.metrics.adapter.util;
 
 import java.text.DecimalFormat;
 
-import org.eclipse.microprofile.metrics.Counter;
-import org.eclipse.microprofile.metrics.Counting;
-import org.eclipse.microprofile.metrics.Gauge;
-import org.eclipse.microprofile.metrics.Histogram;
-import org.eclipse.microprofile.metrics.Meter;
-import org.eclipse.microprofile.metrics.Metered;
-import org.eclipse.microprofile.metrics.MetricUnits;
-import org.eclipse.microprofile.metrics.Sampling;
-import org.eclipse.microprofile.metrics.Timer;
+import esa.egscc.metrics.api.Counter;
+import esa.egscc.metrics.api.Counting;
+import esa.egscc.metrics.api.Gauge;
+import esa.egscc.metrics.api.Histogram;
+import esa.egscc.metrics.api.Meter;
+import esa.egscc.metrics.api.Metered;
+import esa.egscc.metrics.api.MetricUnits;
+import esa.egscc.metrics.api.Sampling;
+import esa.egscc.metrics.api.Timer;
 
 public class PrometheusBuilder {
 

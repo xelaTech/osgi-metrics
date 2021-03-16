@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-import org.eclipse.microprofile.metrics.Snapshot;
+import esa.egscc.metrics.api.Snapshot;
 
 import esa.egscc.metrics.impl.WeightedSnapshot.WeightedSample;
 

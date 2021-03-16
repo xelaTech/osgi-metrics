@@ -2,8 +2,8 @@
 	osgi.annotation;version='7.0.0',\
 	osgi.core;version='7.0.0',\
 	osgi.cmpn;version='7.0.0',\
-	org.eclipse.microprofile.metrics,\
-	slf4j.api
+	slf4j.api,\
+	esa.egscc.metrics.api
 
 -testpath: \
 	${junit},\
@@ -20,4 +20,4 @@ Bundle-Version: 0.0.0.${tstamp}
 -runbundles: \
 	esa.egscc.metrics.impl;version=snapshot,\
 	org.apache.felix.scr;version='[2.1.10,2.1.11)',\
-	org.eclipse.microprofile.metrics;version=snapshot
+	esa.egscc.metrics.api;version=snapshot

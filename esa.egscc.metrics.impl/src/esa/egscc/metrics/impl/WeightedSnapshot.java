@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Collection;
 
-import org.eclipse.microprofile.metrics.Snapshot;
+import esa.egscc.metrics.api.Snapshot;
 
 /**
  * A statistical snapshot of a {@link WeightedSnapshot}.
