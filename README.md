@@ -14,7 +14,9 @@ OSGi bundles providing OS, JVM and application level metrics.
 # Build & Run from Shell
 
 ./gradlew clean
-./gradleW build
+
+./gradlew build
+
 java -jar esa.egscc.metrics.app/generated/metrics-app.bndrun.jar
 
 # Import to Eclipse
