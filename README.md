@@ -19,7 +19,7 @@ OSGi bundles providing OS, JVM and application level metrics.
 
 java -jar esa.egscc.metrics.app/generated/metrics-app.bndrun.jar
 
-The application is providing Gogo shell. To see the metrics go to browser and open [localhost:8080/metrics](localhost:8080/metrics)
+The application is providing Gogo shell. To see the metrics go to browser and open [localhost:8080/metrics](http://localhost:8080/metrics)
 
 # Import to Eclipse
 
