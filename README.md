@@ -13,9 +13,7 @@ OSGi bundles providing OS, JVM and application level metrics.
 
 # Build & Run from Shell
 
-./gradlew clean
-
-./gradlew build
+./gradlew clean build
 
 java -jar esa.egscc.metrics.app/generated/metrics-app.bndrun.jar
 
