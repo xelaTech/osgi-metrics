@@ -11,3 +11,4 @@ javac.target: 1.8
 
 -export: \
   metrics-app.bndrun
+-runee: JavaSE-1.8
